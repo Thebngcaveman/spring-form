@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Register here and join our crew!</title>
+    <style type="text/css">
+    body {
+        background-color: powderblue;
+    }
+    label{
+         display: inline-block;
+         width: 250px;
+         text-align: left;
+    }
+    button{
+        margin: 10px;
+        padding: 10px;
+    }
+    input[type=text],input[type=password], select{
+        display: inline-block;
+        width: 200px;
+    }
+    input[type=checkbox]{
+        margin-right: 90px;
+    }
+    </style>
+</head>
+<body>
+    <div align="center">
+        <h1>Join our crew</h1>
+        <form action="#" th:action="@{/register}" th:object="${caveman}" method="POST">
+            <label>Full name:</label>
+            <input type="text" th:field="*{name}" required minlength="6" /> <br/>
+
+            <label>E-mail:</label>
+            <input type="text" th:field="*{email}" required minlength="12" /> <br/>
+
+            <label>Password:</label>
+            <input type="password" th:field="*{password}" required
+                   minlength="6" maxlength="10"/> <br/>
+
+            <label>Birthday:</label>
+            <input type="date" th:field="*{birthday}" required /> <br/>
+
+            <label>Job:</label>
+            <select th:field="*{job}">
+                <option th:each="j : ${jobList}" th:value="${j}" th:text="${j}"/>
+            </select> <br/>
+
+            <label>Are you married?</label>
+            <input type="checkbox" th:field="*{married}" /> <br/>
+
+            <label>Gender:</label>
+            <input type="radio" th:field="*{gender}" value="Male" /> Male
+            <input type="radio" th:field="*{gender}" value="Female" /> Female
+            <input type="radio" th:field="*{gender}" value="Other" /> Other
+            <br/>
+
+            <label>Note:</label>
+            <textarea row="6" cols="20" th:field="*{note}"></textarea>
+            <br/>
+            <button type="submit">Register</button> <br/>
+        </form>
+    </div>
+</body>
+</html>

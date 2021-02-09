@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Enjoy the sun,our HR will handle the rest!!</title>
+    <style>
+        span{
+            display: inline-block;
+            width: 250px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<div align="center">
+    <h1>Congrats for joing our crew</h1>
+    <span>Full name:</span><span th:text="${caveman.name}"></span><br/>
+    <span>E-mail:</span><span th:text="${caveman.email}"></span><br/>
+    <span>Password:</span><span th:text="${caveman.password}"></span><br/>
+    <span>Birthday:</span><span th:text="${caveman.birthday}"></span><br/>
+    <span>Job:</span><span th:text="${caveman.job}"></span><br/>
+    <span>Are you married?:</span><span th:text="${caveman.married}"></span><br/>
+    <span>Gender:</span><span th:text="${caveman.gender}"></span><br/>
+    <span>Note:</span><span th:text="${caveman.note}"></span><br/>
+</div>
+</body>
+</html>
